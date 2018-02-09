@@ -7299,5 +7299,33 @@
   "CoveoOrganization": {
     "en": "Coveo Organization",
     "fr": "Organisation Coveo"
+  },
+  "SearchAPIDuration": {
+    "en": "Search API Duration: {0}",
+    "fr": "Durée de l'API de recherche : {0}"
+  },
+  "LastUpdated": {
+    "en": "Last updated",
+    "fr": "Dernière mise à jour"
+  },
+  "AllDates": {
+    "en": "All dates",
+    "fr": "Toutes les dates"
+  },
+  "WithinLastDay": {
+    "en": "Within last day",
+    "fr": "Depuis le dernier jour"
+  },
+  "WithinLastWeek": {
+    "en": "Within last week",
+    "fr": "Depuis la dernière semaine"
+  },
+  "WithinLastMonth": {
+    "en": "Within last month",
+    "fr": "Depuis le dernier mois"
+  },
+  "WithinLastYear": {
+    "en": "Within last year",
+    "fr": "Depuis la dernière année"
   }
 }

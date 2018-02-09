@@ -172,6 +172,9 @@ FacetSliderTest();
 import { FacetTest } from './ui/FacetTest';
 FacetTest();
 
+import { BreadcrumbValueListTest } from './ui/BreadcrumbValuesListTest';
+BreadcrumbValueListTest();
+
 import { FieldSuggestionsTest } from './ui/FieldSuggestionsTest';
 FieldSuggestionsTest();
 
@@ -210,6 +213,9 @@ MatrixTest();
 
 import { OmniboxTest } from './ui/OmniboxTest';
 OmniboxTest();
+
+import { OmniboxResultListTest } from './ui/OmniboxResultListTest';
+OmniboxResultListTest();
 
 import { PagerTest } from './ui/PagerTest';
 PagerTest();
@@ -451,6 +457,12 @@ ValueElementTest();
 import { PublicPathUtilsTest } from './utils/PublicPathUtilsTest';
 PublicPathUtilsTest();
 
+import { DomUtilsTest } from './utils/DomUtilsTest';
+DomUtilsTest();
+
+import { UtilsTest } from './utils/UtilsTest';
+UtilsTest();
+
 import { CheckboxTest } from './ui/CheckboxTest';
 CheckboxTest();
 
@@ -480,3 +492,12 @@ SimpleFilterTest();
 
 import { DeviceUtilsTest } from './utils/DeviceUtilsTest';
 DeviceUtilsTest();
+
+import { TimespanFacetTest } from './ui/TimespanFacetTest';
+TimespanFacetTest();
+
+import { UrlUtilsTest } from './utils/UrlUtilsTest';
+UrlUtilsTest();
+
+import { AccessTokenTest } from './rest/AccessTokenTest';
+AccessTokenTest();

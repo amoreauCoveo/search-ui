@@ -10,6 +10,9 @@ import { ModalBox as ModalBoxModule } from '../../ExternalModulesShim';
 import * as _ from 'underscore';
 import { exportGlobally } from '../../GlobalExports';
 import { get } from '../Base/RegisteredNamedMethods';
+import { SVGIcons } from '../../utils/SVGIcons';
+import { SVGDom } from '../../utils/SVGDom';
+import { Utils } from '../../utils/Utils';
 
 export interface IYouTubeThumbnailOptions {
   width: string;
@@ -90,8 +93,16 @@ export class YouTubeThumbnail extends Component {
     let img = $$('img');
     img.el.style.width = this.options.width;
     img.el.style.height = this.options.height;
-    img.setAttribute('src', result.raw['ytthumbnailurl']);
+    img.setAttribute('src', Utils.getFieldValue(this.result, 'ytthumbnailurl'));
     img.addClass('coveo-youtube-thumbnail-img');
+    img.el.onerror = () => {
+      const svgVideo = $$('div', {}, SVGIcons.icons.video).el;
+      SVGDom.addStyleToSVGInContainer(svgVideo, {
+        width: this.options.width
+      });
+      $$(img).remove();
+      thumbnailDiv.append(svgVideo);
+    };
     thumbnailDiv.append(img.el);
 
     let span = $$('span');
@@ -142,7 +153,7 @@ export class YouTubeThumbnail extends Component {
 
     this.modalbox = this.ModalBox.open(div.el, {
       overlayClose: true,
-      title: DomUtils.getQuickviewHeader(this.result, { showDate: true, title: this.result.title }, this.bindings).el.outerHTML,
+      title: DomUtils.getQuickviewHeader(this.result, { showDate: true, title: this.result.title }, this.bindings).el,
       className: 'coveo-youtube-player',
       validation: () => true,
       body: this.element.ownerDocument.body,

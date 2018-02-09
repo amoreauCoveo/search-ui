@@ -1,4 +1,3 @@
-import { Template } from '../Templates/Template';
 import { IQueryResult } from '../../rest/QueryResult';
 import { Component } from '../Base/Component';
 import { IResultListOptions } from './ResultList';

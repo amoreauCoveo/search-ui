@@ -166,6 +166,7 @@ export class Querybox extends Component {
      *
      * Default value is `false`, which implies that an item must contain all of the basic expression keywords to match
      * the query.
+     * @notSupportedIn salesforcefree
      */
     enablePartialMatch: ComponentOptions.buildBooleanOption({ defaultValue: false }),
 
@@ -184,6 +185,7 @@ export class Querybox extends Component {
      * > to be converted to a partial match expression.
      *
      * Default value is `5`.
+     * @notSupportedIn salesforcefree
      */
     partialMatchKeywords: ComponentOptions.buildNumberOption({ defaultValue: 5, min: 1, depend: 'enablePartialMatch' }),
 
@@ -209,15 +211,16 @@ export class Querybox extends Component {
      * > contains.
      *
      * Default value is `50%`.
+     * @notSupportedIn salesforcefree
      */
     partialMatchThreshold: ComponentOptions.buildStringOption({ defaultValue: '50%', depend: 'enablePartialMatch' }),
 
     /**
      * Specifies whether to trigger a query when clearing the `Querybox`.
      *
-     * Default value is `true`.
+     * Default value is `false`.
      */
-    triggerQueryOnClear: ComponentOptions.buildBooleanOption({ defaultValue: true })
+    triggerQueryOnClear: ComponentOptions.buildBooleanOption({ defaultValue: false })
   };
 
   public magicBox: Coveo.MagicBox.Instance;
