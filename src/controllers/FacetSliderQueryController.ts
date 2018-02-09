@@ -179,7 +179,7 @@ export class FacetSliderQueryController {
     // This will determine the full range of the query so that the X range of the slider is static
     this.groupByRequestForFullRange = queryBuilder.groupByRequests.length;
     const groupByRequestForFullRange = _.clone(basicGroupByRequestForSlider);
-    groupByRequestForFullRange.queryOverride = this.facet.options.queryOverride || '@uri';
+    groupByRequestForFullRange.advancedQueryOverride = this.facet.options.queryOverride || '@uri';
     delete groupByRequestForFullRange.constantQueryOverride;
     delete groupByRequestForFullRange.advancedQueryOverride;
 
@@ -192,10 +192,10 @@ export class FacetSliderQueryController {
       groupByRequest.queryOverride = queryOverrideObject.basic;
       groupByRequest.advancedQueryOverride = queryOverrideObject.advanced;
       groupByRequest.constantQueryOverride = queryOverrideObject.constant;
-      if (groupByRequest.queryOverride == undefined) {
-        groupByRequest.queryOverride = this.facet.options.queryOverride || '@uri';
+      if (groupByRequest.advancedQueryOverride == undefined) {
+        groupByRequest.advancedQueryOverride = this.facet.options.queryOverride || '@uri';
       } else {
-        groupByRequest.queryOverride += this.facet.options.queryOverride ? ' ' + this.facet.options.queryOverride : '';
+        groupByRequest.advancedQueryOverride += this.facet.options.queryOverride ? ' ' + this.facet.options.queryOverride : '';
       }
     } else if (this.facet.options.queryOverride != null) {
       const completeExpression = queryBuilder.computeCompleteExpression();
